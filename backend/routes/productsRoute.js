@@ -7,31 +7,31 @@ const data = {
             id: "1",
             name: "Apple Fresh",
             price: 499,
-            image: ""
+            image: "./images/apple.jpg"
         },
         {
             id: "2",
             name: "Banana",
             price: 99,
-            image: ""
+            image: "./images/banana.jpg"
         },
         {
             id: "3",
             name: "Maango",
             price: 299,
-            image: ""
+            image: "./images/kiwi.jpg"
         },
         {
             id: "4",
             name: "Kiwi",
             price: 699,
-            image: ""
+            image: "./images/mango.jpg"
         },
         {
             id: "5",
             name: "Pinapple",
             price: 199,
-            image: ""
+            image: "./images/pineapple.jpg"
         }
     ]
 }
