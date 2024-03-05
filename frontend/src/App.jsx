@@ -8,6 +8,7 @@ import Navbar from './components/navbar/Navbar.jsx';
 
 function App() {
   const [cartItems, setCartItems] = useState([]);
+
   function handleAddProduct(product) {
     const productExist = cartItems.find(item => {
       return item.id === product.id;
@@ -54,7 +55,7 @@ function App() {
       <Routes>
         <Route path='/' element={<Products handleAddProduct={handleAddProduct} />} />
         <Route path='/signup' element={<Signup />} />
-        <Route path='/cart' element={<Cart handleAddProduct={handleAddProduct} handleCartClearence={handleCartClearence} handleRemoveProduct={handleRemoveProduct} />} />
+        <Route path='/cart' element={<Cart cartItems={cartItems} handleAddProduct={handleAddProduct} handleCartClearence={handleCartClearence} handleRemoveProduct={handleRemoveProduct} />} />
       </Routes>
     </React.Fragment>
   );

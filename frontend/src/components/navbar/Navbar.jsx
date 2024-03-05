@@ -23,10 +23,16 @@ function Navbar(props) {
                 <ul>
                     <li>
                         <Link to="/signup">Signup</Link>
-                        <i className='fas fa-shopping-cart' />
-                        <span className='cart-length'>
-                            {props.cartItems.length}
-                        </span>
+                    </li>
+                </ul>
+                <ul>
+                    <li>
+                        <Link to='/cart' className='cart'>
+                            <i className='fas fa-shopping-cart' />
+                            <span className='cart-length'>
+                                {props.cartItems.length}
+                            </span>
+                        </Link>
                     </li>
                 </ul>
 
