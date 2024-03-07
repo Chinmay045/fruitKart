@@ -17,15 +17,15 @@ const data = {
         },
         {
             id: "3",
-            name: "Maango",
+            name: "Mango",
             price: 299,
-            image: "./images/kiwi.jpg"
+            image: "./images/mango.jpg "
         },
         {
             id: "4",
             name: "Kiwi",
             price: 699,
-            image: "./images/mango.jpg"
+            image: "./images/kiwi.jpg"
         },
         {
             id: "5",
