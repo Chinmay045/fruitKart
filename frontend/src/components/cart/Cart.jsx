@@ -16,19 +16,22 @@ function Cart(props) {
                 )}
             </div>
             {props.cartItems.length === 0 &&
-                <div className='clear-cart-button'>
+                <div >
                     No Items are added in the cart
                 </div>
             }
-            <div>
+            <div >
                 {props.cartItems.map(item => {
-                    return (<div>
+                    return (<div key={item.id} className='cart-items-list'>
                         <img className='cart-item-image'
                             src={item.image}
                             alt={item.name} />
+                        <div className='cart-items-name'>
+                            {item.name}
+                        </div>
                         <div className='cart-items-function'>
-                            <button className='cart-items-add' onClick={() => props.handleAddProduct()} />
-                            <button className='cart-items-remove' onClick={() => props.handleRemoveProduct()} />
+                            <button className='cart-items-add' onClick={() => props.handleAddProduct(item)} >+</button>
+                            <button className='cart-items-remove' onClick={() => props.handleRemoveProduct(item)}>-</button>
                         </div>
                         <div className='cart-items-price'>
                             {item.quantity} x Rs.{item.price}

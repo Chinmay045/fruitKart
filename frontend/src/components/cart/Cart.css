@@ -50,6 +50,7 @@
 .cart-items-add,
 .cart-items-remove {
     width: 30px;
+    flex-direction: column;
     margin-right: 15px;
     font-weight: 700;
     border: none;

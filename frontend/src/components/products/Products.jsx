@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from 'react';
+import Dropdown from 'react-bootstrap/Dropdown';
 import './Products.css';
+import { DropdownButton } from 'react-bootstrap';
 
 
 function Products(props) {
@@ -14,8 +16,46 @@ function Products(props) {
     }
     useEffect(() => { getDown() }, []);
 
+    function sortAlphabetAscending() {
+        let productsCopy = [...products.productList];
+        let sorted = productsCopy.sort((a, b) => {
+            return (a.name.toLowerCase() < b.name.toLowerCase()) ? -1 : 1;
+        });
+        setProducts({ flag: true, productList: sorted });
+    }
+
+    function sortAlphabetDescending() {
+        let productsCopy = [...products.productList];
+        let sorted = productsCopy.sort((a, b) => {
+            return (a.name.toLowerCase() < b.name.toLowerCase()) ? 1 : -1;
+        })
+        setProducts({ flag: true, productList: sorted });
+    }
+
+    function sortPriceAscending() {
+        let productsCopy = [...products.productList];
+        let sorted = productsCopy.sort((a, b) => a.price - b.price);
+        setProducts({ flag: true, productList: sorted })
+    }
+
+    function sortPriceDescending() {
+        let productsCopy = [...products.productList];
+        let sorted = productsCopy.sort((a, b) => b.price - a.price);
+        setProducts({ flag: true, productList: sorted })
+    }
+
     return ((products.flag) ?
         <div className="products-container">
+            <div className='sort-button'>
+                <DropdownButton variant="success" title="Sort By">
+                    <Dropdown.Item eventKey='1' onClick={sortAlphabetAscending}>A-Z</Dropdown.Item>
+                    <Dropdown.Item eventKey='2' onClick={sortAlphabetDescending}>Z-A</Dropdown.Item>
+                    <Dropdown.Divider />
+                    <Dropdown.Item eventKey='3' onClick={sortPriceAscending}>Low to High</Dropdown.Item>
+                    <Dropdown.Item eventKey='4' onClick={sortPriceDescending}>High to Low</Dropdown.Item>
+                </DropdownButton>
+            </div>
+
             <div className="products">
                 {products.productList.map(item => {
                     return (
